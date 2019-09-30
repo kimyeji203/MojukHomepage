@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.inhatc.mapper.joinMapper">
+	<insert id="joinUp" parameterType="com.inhatc.mojuk.main.vo.JoinVO">
+		insert 
+		into join_board
+		(stu_no, stu_name, stu_dept, password, email, pw_q, pw_a,profile_yesno)
+		values(#{stu_no},#{stu_name},#{stu_dept},#{password},#{email},#{pw_q},#{pw_a},'N')
+	</insert>
+	
+	<select id="loginUp" parameterType="String" resultType="com.inhatc.mojuk.main.vo.JoinVO">
+		select * from join_board
+		where stu_no = #{stu_no} 
+		and password = #{password}
+	</select>
+	
+	<!-- 프로필 작성 여부 -->
+	<select id="profileYN" parameterType="String" resultType="String">
+		select profile_yesno from join_board
+		where stu_no = #{stu_no}
+	</select>
+	<update id="changeYN" parameterType="String">
+		update join_board
+		set profile_yesno = 'Y'
+		where stu_no = #{stu_no}
+	</update>
+</mapper>

@@ -1,0 +1,71 @@
+@charset "EUC-KR";
+
+h4{margin-bottom:80px;}
+table{margin-top:10px;}
+th{text-align:center;}
+td{background-color:#fff;}
+#gallery_wrap{
+	text-align:right;
+	width:60%;
+	height:100%;
+	margin:0 20% 0 20%;
+	text-align:center;
+	
+}
+#menu_wrap{}
+
+
+.card{
+	float:left;
+	margin:2%;
+	padding:0;
+	width:23%;
+	text-align:center;
+	cursor:pointer;
+	overflow:hidden;
+}
+.img_box{
+	width:100%;
+	border:1px solid #c9c9c9;
+	
+}
+.img{
+	margin:0;
+	padding:0;
+	width:auto;
+	height:15vh;
+	
+}
+/* >>>>>   write  <<<<< */
+#fileinfo{padding-bottom:5px;}
+.fileTitle{
+	float:left;
+	width:28%;
+	    height: 30px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.fileInput{
+	width:70%;
+	height: 30px;
+	padding: 3px 12px;
+   
+ }
+.fileInput, .fileTitle{margin:0;}
+
+/* >>>>>   read   <<<<< */
+#read_table{
+	margin-bottom:5%;
+}
+.read_imgBox{
+	width:90%;
+	padding:1%;
+	border:1px solid #c9c9c9;
+}
+.read_img{
+	width:100%;
+}
+.td_title{
+	width:10%;
+}

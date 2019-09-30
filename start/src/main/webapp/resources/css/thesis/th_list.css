@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+h4{margin-bottom:80px;}
+th, td{text-align:center;}
+td{
+	border-left:0px hidden;
+	border-rigth:0px hidden;
+	background-color:#fff;
+}
+table{
+	border-left:hidden;
+	font-size:12px;
+}
+#content_wrap{margin-top:10px;}
+#th_name{width:35%;}
+#th_bno{width:3%;}
+.td_name{text-align:left;}
+#th_writer{width:13%;}
+#th_date{width:13%;}

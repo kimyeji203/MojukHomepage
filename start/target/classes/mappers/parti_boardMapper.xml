@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.inhatc.mapper.parti_BoardMapper">
+	<insert id="insertParti" parameterType="hashmap">
+		insert
+		into parti_board(stu_num,stu_name)
+		values(#{stu_no},#{stu_name})
+	</insert>
+
+	<select id="readone" resultType="com.inhatc.mojuk.participate.vo.PartiVO">
+		select * 
+		from parti_board 
+		where stu_num = #{stu_num}
+	</select>
+	
+	<select id="readAll" resultType="com.inhatc.mojuk.participate.vo.PartiVO">
+		select 
+			p.stu_num as stu_num,
+			p.stu_name as stu_name, 
+		    p.one_in_one_name as one_in_one_name,
+		    p.one_in_one_date as one_in_one_date,
+		    p.one_in_one_now as one_in_one_now,
+		    p.one_in_two_name as one_in_two_name,
+		    p.one_in_two_date as one_in_two_date,
+		    p.one_in_two_now as one_in_two_now,
+		    p.two_in as two_in,
+		    p.three_in as three_in
+		from join_board as j, parti_board as p 
+		where j.stu_no = p.stu_num
+	</select>
+	
+	<update id="update">
+		update parti_board
+		set 
+		one_in_one_name = #{one_in_one_name},
+		one_in_one_date = #{one_in_one_date},
+		one_in_one_now = #{one_in_one_now},
+		one_in_two_name = #{one_in_two_name},
+		one_in_two_date = #{one_in_two_date},
+		one_in_two_now = #{one_in_two_now},
+		two_in = #{two_in},
+		three_in = #{three_in}
+		where stu_num = #{stu_num}
+	</update>
+</mapper>

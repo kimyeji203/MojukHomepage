@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+#content{background:#fff;}
+h4{margin-bottom:80px;}
+table{height:400px;background:#fff;margin-top:10px;}
+th{text-align:center;}
+td{background:#fff;}
+#pa_wrap{
+	text-align:right;
+	width:60%;
+	margin:0 20% 0 20%;
+}
+#oneIn_date{height:20px;}
+
+.tbt{color:#fff;}
+.tdt{background:#ebebeb;}
+.tbx{width:100%;}

@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+#content{background:#fff;}
+h4{margin-bottom:80px;}
+table{margin-top:10px;}
+th{text-align:center;}
+#pa_wrap{
+	text-align:right;
+	width:60%;
+	margin:0 20% 0 20%;
+}
+.onein{width:30%;}
+.twoin, .threein{width:20%}

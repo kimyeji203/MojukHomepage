@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+
+#tableEdu, #tableAc{width:100%;}
+#profileImg{width:150px;height:200px;}
+
+.litleTitle{font-size:20px;font-weight:700;}
+.tdTitle{text-align:center;}
+.form-control{width:100%;}
+

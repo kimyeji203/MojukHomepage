@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.inhatc.mapper.usefulMapper">
+	<insert id="insert" parameterType="com.inhatc.mojuk.useful.vo.UsVO">
+		INSERT INTO useful_link
+		VALUES(#{us_idx}, #{us_title}, #{us_link}, #{us_writer},SYSDATE())
+	</insert>
+	<select id="listAll" resultType="com.inhatc.mojuk.useful.vo.UsVO">
+		SELECT * FROM useful_link
+	</select>
+</mapper>

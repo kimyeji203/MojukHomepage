@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.inhatc.mapper.toc_BoardMapper">
+	
+	<!-- project board SQL -->
+	<insert id="pro_insertFile" parameterType="hashmap">
+		<![CDATA[
+			insert into pro_file
+			(
+				IDX,
+				BOARD_IDX,
+				MULTI_FILE,
+				ORIGINAL_FILE_NAME,
+				STORED_FILE_NAME,
+				FILE_SIZE,
+				CREA_DTM,
+				CREA_ID,
+				DEL_GB
+			)
+			values
+			(
+				#{IDX},
+				#{BOARD_IDX},
+				#{MULTI_FILE},
+				#{ORIGINAL_FILE_NAME},
+				#{STORED_FILE_NAME},
+				#{FILE_SIZE},
+				default,
+				default,
+				default
+			)
+			]]>
+	</insert>
+	
+	<select id="pro_fileImgs" resultType="hashmap">
+    <![CDATA[
+        SELECT
+            BOARD_IDX,
+            MULTI_FILE
+        FROM
+            pro_file
+        WHERE
+        	(STORED_FILE_NAME like '%.png'
+        	OR STORED_FILE_NAME like '%.jpg')
+            AND DEL_GB = 'N'
+        ORDER BY IDX DESC
+    ]]>
+	</select>
+
+	<select id="listAll" resultType="com.inhatc.mojuk.board.vo.BoardVO">
+		select
+		toc_bno, toc_belong, toc_title, toc_writer, toc_regdate
+		from pro_board
+		where toc_bno>0
+		order by toc_bno
+		desc,
+		toc_regdate desc
+		limit #{pageStart}, #{perPageNum}
+	</select>
+
+	<select id="countPaging" resultType="int">
+		select
+		count(toc_bno)
+		from pro_board
+		where toc_bno>0
+		
+	</select>
+
+    <insert id="create" parameterType="com.inhatc.mojuk.board.vo.BoardVO">
+		insert into pro_board (toc_bno, toc_belong, toc_title, toc_content, toc_writer, toc_regdate)
+		values(#{toc_bno}, #{toc_belong}, #{toc_title}, #{toc_content}, #{toc_writer}, SYSDATE())
+	</insert>
+	
+	<insert id="insertFile" parameterType="hashmap">
+		<![CDATA[
+			insert into pro_file
+			(
+				IDX,
+				BOARD_IDX,
+				ORIGINAL_FILE_NAME,
+				STORED_FILE_NAME,
+				FILE_SIZE,
+				CREA_DTM,
+				CREA_ID,
+				DEL_GB
+			)
+			values
+			(
+				#{IDX},
+				#{BOARD_IDX},
+				#{ORIGINAL_FILE_NAME},
+				#{STORED_FILE_NAME},
+				#{FILE_SIZE},
+				default,
+				default,
+				default
+			)
+			]]>
+		</insert>
+		
+	<select id="read" resultType="hashmap">
+		select toc_bno, toc_belong, toc_title, toc_content
+		from pro_board
+		where toc_bno = #{toc_bno}
+	</select>
+	
+	<select id="selectbno" resultType="String">
+		select toc_bno
+		from pro_board
+        order by toc_bno desc
+		limit 1;
+	</select>
+	
+	<select id="selectFileList" parameterType="Integer" resultType="hashmap">
+    <![CDATA[
+        SELECT
+            IDX,
+            ORIGINAL_FILE_NAME,
+            ROUND(FILE_SIZE/1024,1) AS FILE_SIZE
+        FROM
+            pro_file
+        WHERE
+            BOARD_IDX = #{bno}
+            AND DEL_GB = 'N'
+    ]]>
+	</select>
+	
+	<select id="selectFileImg" resultType="hashmap">
+    <![CDATA[
+        SELECT
+            IDX,
+            ORIGINAL_FILE_NAME,
+            STORED_FILE_NAME,
+            ROUND(FILE_SIZE/1024,1) AS FILE_SIZE
+        FROM
+            pro_file
+        WHERE
+        	(STORED_FILE_NAME like '%.png'
+        	OR STORED_FILE_NAME like '%.jpg')
+            AND DEL_GB = 'N'
+        ORDER BY IDX DESC
+    ]]>
+	</select>
+
+</mapper>

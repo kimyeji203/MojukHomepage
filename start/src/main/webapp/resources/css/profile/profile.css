@@ -1,0 +1,42 @@
+#content{background:#fff;padding-bottom:0;}
+
+h4{margin-bottom:80px;}
+td{background-color:#fff;}
+#img_wrap{
+	padding:0;
+	margin:80px 20% 0 20%;
+}
+#img_wrap > .img{
+	margin:0;
+	padding:0;
+	width:100%;
+	
+}
+.main_footer{
+	color:#fff;
+	background:#525252;
+	padding:20px;	
+}
+
+/* pf_member.jsp */
+
+#pf_wrap{margin:0 20% 0 20%;}
+.member_tables{
+	margin:10px 0 50px 0;
+	
+}
+
+.td_title{
+	text-align:center;
+	color:#75753c;
+	font-weight:bold;
+}
+.td_img{
+	width:100px;
+}
+.pf_img{
+	width:100px;
+	height:130px;
+	margin:0;
+	padding:0;
+}

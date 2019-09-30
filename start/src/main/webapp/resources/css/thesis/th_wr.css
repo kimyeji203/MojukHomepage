@@ -1,0 +1,22 @@
+@charset "utf-8";
+body{font-align:center;}
+td{background-color:#fff;font-size:13px;}
+.write_wrap{
+	width:100%;
+}
+#writer{width:80%;}
+.write_table{margin:5px;margin-bottom:10%;}
+#infor_box{
+	min-height:300px;
+	margin:0;
+	padding:0;
+}
+.readORupdate{margin:5px;text-align:center;}
+.write_content{text-align:center;}
+#update{display:none;}
+#view{display:block;}
+.button_rtbox{margin-left:50px;}
+
+.writer{width:100%;}
+.form-control{width:100%;}
+#writerInfo{border:0px hidden black;}

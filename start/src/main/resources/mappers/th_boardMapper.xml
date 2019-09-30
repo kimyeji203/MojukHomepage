@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.inhatc.mapper.th_BoardMapper">
+	
+	<!-- 논문 DB 조회 -->
+	<select id="listAll" resultType="com.inhatc.mojuk.board.vo.ThesisVO" parameterType="hashmap">
+		select 
+			*
+		from th_board
+		order by th_bno desc 
+		limit #{pageStart}, #{perPageNum}
+	</select>
+	<select id="countList" resultType="Integer">
+		<![CDATA[
+			select count(*)
+			from th_board
+		]]>
+	</select>
+	<!-- 논문 작성자 리스트 추출 -->
+	<select id="writerList" parameterType="Integer" resultType="String">
+		select th_stu_name
+		from th_writers
+		where th_bno = #{th_bno}
+	</select>
+	
+	
+	<!-- 논문 수정 -->
+	<update id="update" parameterType="com.inhatc.mojuk.board.vo.ThesisVO">
+		update th_board
+		set 
+			th_name = #{th_name}, th_group = #{th_group}, th_insti_name = #{th_insti_name},
+			th_institution = #{th_institution}, th_page = #{th_page},th_public_date = #{th_public_date}, th_regdate = SYSDATE()
+		where th_bno = #{th_bno}
+	</update>
+	
+
+	
+	<!-- 논문 삭제 -->
+	<delete id="delete" parameterType="Integer">
+		delete 
+		from th_board
+		where th_bno = #{th_bno}
+	</delete>
+	<delete id="deleteWriter" parameterType="Integer">
+		delete from th_writers
+		where th_bno = #{th_bno}	
+	</delete>
+	
+	
+	<!-- 논문 상세 보기 -->
+	<select id="read" resultType="hashmap">
+		select *
+		from th_board
+		where th_bno = #{th_bno}
+	</select>
+	
+	<select id="readWriter" resultType="hashmap">
+		select * from th_writers
+		where th_bno = #{th_bno}
+	</select>
+	
+	<!-- 논문 추가. 등록 -->
+	<select id="selectbno" resultType="String">
+		select th_bno
+		from th_board
+        order by th_bno desc
+		limit 1
+	</select>
+	
+	<insert id="register" parameterType="com.inhatc.mojuk.board.vo.ThesisVO">
+		insert into th_board
+		values(#{th_bno}, #{th_name}, #{th_institution}, SYSDATE(), #{th_page}, #{th_insti_name}, #{th_public_date},#{th_group},'move')
+	</insert>
+	
+	<insert id="registWriter" parameterType="com.inhatc.mojuk.board.vo.ThWriterVO">
+		insert into th_writers
+		values(#{idx},#{th_bno},#{th_stu_no},#{th_stu_name})
+	</insert>
+	
+</mapper>

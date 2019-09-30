@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.inhatc.mapper.gallery_BoardMapper">
+	<insert id="regist" parameterType="com.inhatc.mojuk.gallery.vo.GalleryVO">
+		insert into gallery_board (board_no, gallery_title, gallery_writer,gallery_writer_id, gallery_content, gallery_redate)
+		values(#{board_no}, #{gallery_title}, #{gallery_writer},#{gallery_writer_id}, #{gallery_content}, SYSDATE())
+	</insert>
+	
+	<insert id="registImges" parameterType="com.inhatc.mojuk.gallery.vo.GalleryImgVO">
+		insert into gallery_images
+		values(#{idx},#{board_no},#{gallery_img},#{gallery_img_title})
+	</insert>
+	
+	<select id="getbno" resultType="String">
+		select board_no from gallery_board
+		order by board_no desc
+		limit 1
+	</select>
+	
+	<select id="getAll" resultType="com.inhatc.mojuk.gallery.vo.GalleryVO">
+		select * from gallery_board
+		order by board_no desc
+	</select>
+	
+	<select id="getImg" resultType="com.inhatc.mojuk.gallery.vo.GalleryImgVO">
+		select * from gallery_images 
+		where board_no = #{bno}
+		limit 1
+	</select>
+	
+	<select id="readOneInfo" resultType="com.inhatc.mojuk.gallery.vo.GalleryVO">
+		select * from gallery_board
+		where board_no = #{bno}
+	</select>
+	
+	<select id="readOneImages" resultType="com.inhatc.mojuk.gallery.vo.GalleryImgVO">
+		select * from gallery_images
+		where board_no = #{bno}
+	</select>
+
+	<!-- delete -->
+	<delete id="deleteInfo" parameterType="Integer">
+		delete from gallery_board
+		where board_no = #{bno}
+	</delete>
+	<delete id="deleteImages" parameterType="Integer">
+		delete from gallery_images
+		where board_no = #{bno}
+	</delete>
+<!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+	<select id="listAll" resultType="com.inhatc.mojuk.gallery.vo.GalleryVO">
+		select
+		gallery_bno, gallery_title, gallery_writer, gallery_regdate
+		from gallery_board
+		where gallery_bno>0
+		order by gallery_bno
+		desc,
+		gallery_regdate desc
+		limit #{pageStart}, #{perPageNum}
+	</select>
+
+	<select id="countPaging" resultType="int">
+		select
+		count(gallery_bno)
+		from gallery_board
+		where gallery_bno>0
+		
+	</select>
+
+    
+	
+	
+	<insert id="addAttach">
+		insert into gallery_attach (fullname, bno) values (#{fullName}, LAST_INSERT_ID()))
+	</insert>
+	
+	
+	
+
+
+</mapper>
