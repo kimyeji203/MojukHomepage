@@ -9,13 +9,8 @@ _ 1인 개발
 <br><br><br>
 # 실행화면
 <div>
-<img width="400" alt="메인" src="https://user-images.githubusercontent.com/38337323/66102043-ebf09a80-e5eb-11e9-8139-d8a76355b70f.png">
-<img width="400" alt="프로필" src="https://user-images.githubusercontent.com/38337323/66102052-f448d580-e5eb-11e9-916e-c2c6ac56fe77.png">
-<img width="400" alt="프로젝트" src="https://user-images.githubusercontent.com/38337323/66102051-f448d580-e5eb-11e9-836d-53fa32e198dd.png">
-<img width="400" alt="참여체크" src="https://user-images.githubusercontent.com/38337323/66102050-f3b03f00-e5eb-11e9-878d-0d4d7b4e81b5.png">
-<img width="400" alt="갤러리" src="https://user-images.githubusercontent.com/38337323/66102039-eb580400-e5eb-11e9-8c36-2f56240e95e2.png">
-<img width="400" alt="논문" src="https://user-images.githubusercontent.com/38337323/66102042-ebf09a80-e5eb-11e9-924e-7a176cbf0e09.png">
-<img width="400" alt="FQA" src="https://user-images.githubusercontent.com/38337323/66102054-f6ab2f80-e5eb-11e9-95f4-b9a695ec41a2.png">
+<img width="618" alt="캡처1" src="https://user-images.githubusercontent.com/38337323/66102630-edbb5d80-e5ed-11e9-8138-30c8eedc5bba.PNG">
+<img width="618" alt="캡처2" src="https://user-images.githubusercontent.com/38337323/66102632-edbb5d80-e5ed-11e9-88ce-d4c330ceb381.PNG">
 </div>
 
 <br><br><br>
