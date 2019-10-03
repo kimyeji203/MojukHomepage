@@ -2,9 +2,10 @@
 학교 동아리 홈페이지<br><br>
 
 _ Spring Framework, Mybatis, MySQL 사용<br>
-_ 개발기간 13주 (2019.04 ~ 2019.05)<br>
+_ HTML, CSS, JAVA, JavaScript, JQuery, JSTL<br><br>
 
-_ 1인 개발
+_ 1인 개발<br>
+_ 개발기간 13주 (2019.04 ~ 2019.05)<br>
 
 <br><br><br>
 # 실행화면
