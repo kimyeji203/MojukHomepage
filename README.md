@@ -1,8 +1,10 @@
 # MojukHomepage
 학교 동아리 홈페이지<br><br>
 
-_ Spring Boot, Mybatis, MySQL 사용<br>
+_ Spring Framework, Mybatis, MySQL 사용<br>
 _ 개발기간 13주 (2019.04~2019.05)<br>
+
+_ 1인 개발
 
 <br><br><br>
 # 개발환경
