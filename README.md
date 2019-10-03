@@ -10,10 +10,7 @@ _ 1인 개발
 # 실행화면
 <div>
   <img width="1000" alt="캡처1" src="https://user-images.githubusercontent.com/38337323/66102716-4a1e7d00-e5ee-11e9-8dd7-1f5db259c625.PNG">
-<img width="1000" alt="캡처2" src="https://user-images.githubusercontent.com/38337323/66102717-4a1e7d00-e5ee-11e9-9e00-722ee0aeb89f.PNG">
-
-<img width="800" alt="캡처1" src="https://user-images.githubusercontent.com/38337323/66102630-edbb5d80-e5ed-11e9-8138-30c8eedc5bba.PNG">
-<img width="800" alt="캡처2" src="https://user-images.githubusercontent.com/38337323/66102632-edbb5d80-e5ed-11e9-88ce-d4c330ceb381.PNG">
+  <img width="1000" alt="캡처2" src="https://user-images.githubusercontent.com/38337323/66102717-4a1e7d00-e5ee-11e9-9e00-722ee0aeb89f.PNG">
 </div>
 
 <br><br><br>
@@ -28,3 +25,7 @@ _ 1인 개발
   <img width="400" alt="사이트맵" src="https://user-images.githubusercontent.com/38337323/65883709-82e20a80-e3d2-11e9-948a-646a42de40a1.png">
 
 </div>
+
+<br><br><br>
+# 시연 동영상
+
